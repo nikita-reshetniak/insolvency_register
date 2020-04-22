@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>New Profile</title>
+{% endblock %}
+
+{% block body %}
+
+<h2>New profile</h2>
+<form action='/profiles' method='POST'>
+    <label for="first_name">First name:</label>
+    <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Enter first name"
+        aria-label="Enter first name">
+    <br>
+    <label for="last_name">Last name:</label>
+    <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Enter last name"
+        aria-label="Enter last name">
+    <br>
+    <label for="birth_date">Birth date:</label>
+    <input class="form-control" type="text" name="birth_date" id="birth_date" placeholder="Enter birth date"
+        aria-label="Enter birth date" rows="3"></input>
+    <br>
+    <input type="submit" value="Post">
+</form>
+<hr>
+
+{% endblock %}

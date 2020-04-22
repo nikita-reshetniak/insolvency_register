@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Profiles</title>
+{% endblock %}
+
+
+{% block body %}
+    <br>
+    <div>
+        <h1 style="display: inline">All Profiles</h1>
+        <a style="display: inline" class="btn btn-success float-right" href="/profiles/load">Load csv</a>
+        <a style="display: inline; margin-right: 10px;" class="btn btn-success float-right" href="/profiles/new">+ New profile</a>
+    </div>
+    <hr>
+
+    {% for profile in profiles %}
+    <h2>{{ profile.first_name }}</h2>
+    <h2>{{ profile.last_name }}</h2>
+    <h2>{{ profile.birth_date }}</h2>
+        {% for date in dates %}
+            {% if date.profile_id == profile.id %}
+                <p>{{ date.date }}</p>
+            {% endif %}
+        {% endfor %}
+    <br>
+    <br>
+    <a class="btn btn-danger" href="/profiles/delete/{{profile.id}}">Delete</a>
+    <!-- <a class="btn btn-primary" href="/profiles/edit/{{profile.id}}">Edit</a> -->
+    <br>
+    <hr>
+    {% endfor %}
+
+{% endblock %}

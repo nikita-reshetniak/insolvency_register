@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Load File</title>
+{% endblock %}
+
+{% block body %}
+
+<h2>Load from .csv</h2>
+<br>
+<a href="/profiles/load/get-csv">Download template</a>
+<br>
+<br>
+<form action='/profiles' method='POST'>
+    <div class="form-group">
+        <label for="file">File input:</label>
+        <input type="file" class="form-control-file" id="file">
+    </div>
+    <input type="submit" value="Load">
+</form>
+
+{% endblock %}
